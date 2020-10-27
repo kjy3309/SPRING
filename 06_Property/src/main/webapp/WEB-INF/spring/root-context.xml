@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+   <!-- properties 사용을 위한 설정 -->
+   <bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations">
+         <list>
+            <value>classpath:props/*.properties</value>
+         </list>
+      </property>
+   </bean>
+   
+   <!-- @Value 라는 어노테이션으로 properties 내의 값을 부를 수 있다. -->
+   <util:properties id="config" location="classpath:props/manager.properties"></util:properties>
+	
+	
+</beans>

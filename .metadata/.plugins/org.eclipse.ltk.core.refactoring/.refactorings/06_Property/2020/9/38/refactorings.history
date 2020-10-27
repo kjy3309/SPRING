@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;globals.properties&apos; to &apos;11_FileService/src/main/resources/props&apos;&#x0D;&#x0A;- Original project: &apos;06_Property&apos;&#x0D;&#x0A;- Destination element: &apos;11_FileService/src/main/resources/props&apos;&#x0D;&#x0A;- Original element: &apos;globals.properties&apos;" description="Copy file" destination="=11_FileService/src\/main\/resources&lt;props" element1="src/main/resources/props/globals.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1600307033346" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+	<!-- datasource 작성 여긴 log4jdbc를 사용하고있구나...... -->
+	<bean name="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+		<property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="C##WEB_USER"/>
+		<property name="password" value="pass"/>
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="datasource"/>
+		<property name="mapperLocations" value="classpath:com/spring/dao/*.xml"/>
+		<property name="environment" value="classpath:/config/pool-config.xml"/>
+		<property name="configLocation" value="classpath:/config/alias-config.xml"/> <!-- 풀네임 줄여주는 설정 -->
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.spring.dao"/>
+	
+</beans>

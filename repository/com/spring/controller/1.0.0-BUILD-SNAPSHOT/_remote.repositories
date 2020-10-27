@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Aug 21 10:55:14 KST 2020
+controller-1.0.0-BUILD-SNAPSHOT.pom>=
+controller-1.0.0-BUILD-SNAPSHOT.war>=

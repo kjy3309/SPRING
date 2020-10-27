@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;sql_mapper.xml&apos; to &apos;05_Transaction/src/main/java/com.spring.dao&apos;&#x0D;&#x0A;- Original project: &apos;04_Dynamic&apos;&#x0D;&#x0A;- Destination element: &apos;05_Transaction/src/main/java/com.spring.dao&apos;&#x0D;&#x0A;- Original element: &apos;sql_mapper.xml&apos;" description="Copy file" destination="=05_Transaction/src\/main\/java&lt;com.spring.dao" element1="src/main/java/com/spring/dao/sql_mapper.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1598404708134" units="0" version="1.0"/>
+</session>

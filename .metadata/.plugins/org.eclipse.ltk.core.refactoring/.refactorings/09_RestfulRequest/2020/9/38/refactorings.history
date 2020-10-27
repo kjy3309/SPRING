@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;pool-config.xml&apos; to &apos;10_RealTime/src/main/resources/config&apos;&#x0D;&#x0A;- Original project: &apos;09_RestfulRequest&apos;&#x0D;&#x0A;- Destination element: &apos;10_RealTime/src/main/resources/config&apos;&#x0D;&#x0A;- Original element: &apos;pool-config.xml&apos;" description="Copy file" destination="=10_RealTime/src\/main\/resources&lt;config" element1="src/main/resources/config/pool-config.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1600217109762" units="0" version="1.0"/>
+</session>

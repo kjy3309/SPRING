@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- 스케쥴러를 @Scheduled 어노테이션으로 간단하게 사용할 수 있는 설정 -->
+	<task:annotation-driven/>
+	
+	<!-- XML 로 스케쥴 등록하기 
+	<bean id="scheduleJob" class="kr.co.goodee.service.ScheduleService"/>
+	<task:scheduled-tasks>
+		<task:scheduled ref="scheduleJob" method="loop5" cron="0/5 * * * * MON-FRI"/>
+	</task:scheduled-tasks>
+	-->
+	
+</beans>

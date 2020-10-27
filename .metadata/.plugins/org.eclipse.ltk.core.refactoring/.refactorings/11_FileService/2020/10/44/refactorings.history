@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;Bicycle/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;11_FileService&apos;&#x0D;&#x0A;- Destination element: &apos;Bicycle/src/main/resources&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     11_FileService/src/main/resources/config&#x0D;&#x0A;     11_FileService/src/main/resources/props" description="Copy packages" destination="=Bicycle/src\/main\/resources" element1="/src\/main\/resources&lt;config" element2="/src\/main\/resources&lt;props" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1603699560898" version="1.0"/>
+</session>

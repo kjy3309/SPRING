@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 데이타 소스 가져오기 -->
+		<property name="dataSource" ref="datasource"/>		
+		<property name="mapperLocations" value="classpath:com/spring/dao/*.xml"/>	
+		
+
+	</bean>
+	
+	<!-- 마이바티스를 별다른 코드 없이 사용할수 있도록 해 주는 설정 -->
+	<mybatis-spring:scan base-package="com.spring.dao"/>
+	
+
+</beans>

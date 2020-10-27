@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+		
+	<!-- 설정 위치 지정, 데이터 소스 참조, mapper 위치 설정-->
+	<bean id="sqlSessionFactofy" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="environment" value="classpath:/config/mybatis-config.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:com/spring/dao/*.xml"/>
+		<!-- <property name="mapperLocations" value="classpath:com/spring/dao/*.xml"/> -->
+	</bean>
+
+	<!-- 마이바티스 템플릿 사용 설정 -->
+	<bean id="myBatisMapper" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactofy"/>
+	</bean>
+
+
+</beans>

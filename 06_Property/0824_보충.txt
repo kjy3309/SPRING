@@ -1,0 +1,65 @@
+1. 구조
+01_Start_
+    - src/main/java <- JAVA 소스가 존재 하는 곳
+        - kr.co.goodee.controller <- controller 관련 자바 소스가 있는 곳
+    - src/main/resources <- Spring 설정과 관련된 파일이 저장
+        - META-INF <- 신경 X
+        - log4j.xml <- log 와 관련된 설정
+    
+    - src/test/java <- JUnit 테스트 시 테스트 코드가 작성 되는 곳(개발시 사용 X)
+    - src/test/resources
+    
+    - src
+        - main
+            - webapp
+                - resources <- css, js, html, image 파일 등등이 저장됨
+                - WEB-INF
+                    - classes <- 개발과 상관 X
+                    - spring
+                        - appServlet
+                            servlet-context.xml <- 첫 요청시 읽는 설정
+                        root-context.xml <- 프로젝트가 실행시 읽는 설정
+                    - views <- jsp 파일이 저장됨
+                    web.xml <- project 로드시 제일 먼저 읽는 파일
+
+        - test <- 개발시 필요 X
+    - target <- 빌드와 관련된 내용이 저장되는 폴더(개발시 사용 X)
+    pom.xml <- 빌드관련 설정(사용할 라이브러리)
+
+** TIP : 원하는 파일을 빨리 찾고 싶을 경우 shift + ctrl + R
+** TIP : 원하는 문장을 빨리 찾고 싶을 경우 shift + ctrl + Alt + L (quick search)
+
+>>> 서버를 키다.(web.xml -> root-contex.xml)
+>>> localhost:8080/controller/(servlet-context.xml)
+
+
+
+2. 파악 순서
+web.xml <- context.xml 에 관련된 내용을 확인
+*-context.xml <- 무엇이 설정 되었는지? 설정 파일이 어디에 있는지?
+각 설정파일 확인 -> mapper 파일을 통해서 쿼리문 확인
+컨트롤러 파일 확인 -> 컨트롤러에서 부터 흐름을 추적
+
+
+3. 개념
+Frame work(틀+일) -> 특정한 일을 하는 과정/절차, 그리고 거기에 필요한 기능들
+
+의존성 주입(Defendency Injection) 
+-> 사용할 클래스를 빈으로 등록 해 놓는다.
+-> 특정 클래스에서 직접 호출하지 않기 때문에 결합도가 낮아진다.
+A -> B
+A - o - B
+
+제어역전(Inversion Of Control) 
+-> 빈에 등록된 클래스가 사용자의 의지로 동작되지 않음
+-> 컨테이너(Spring)에서 필요하다 판단하여 작동
+
+maven(빌드 툴)
+- ant, gradle, ...
+- war(web server 에서 동작되는 jar 파일) 라는 파일을 생성
+- WAR 파일 생성시 필요한 라이브러리를 다운로드 하여 저장
+- 이에 대한 설정을 pom.xml 에서 한다.
+
+build
+- 소스를 컴파일 하여 작동할 수 있는 형태로 변환하는 것을 의미
+- 예) gugudan.jar

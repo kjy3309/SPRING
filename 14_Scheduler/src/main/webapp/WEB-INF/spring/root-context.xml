@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- properties 사용을 위한 설정 -->
+   <bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations">
+         <list>
+            <value>classpath:props/*.properties</value>
+         </list>
+      </property>
+   </bean>
+		
+	<!-- DB 관련 설정 -->
+	<!-- datasource 작성 여긴 log4jdbc를 사용하고있구나...... -->
+	<bean name="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${Globals.DriverClassName}"/>
+		<property name="url" value="${Globals.Url}"/>
+		<property name="username" value="${Globals.UserName}"/>
+		<property name="password" value="${Globals.Password}"/>
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="datasource"/>
+		<property name="mapperLocations" value="classpath:kr/co/goodee/dao/*.xml"/>
+		<property name="environment" value="classpath:/config/pool-config.xml"/>
+		<property name="configLocation" value="classpath:/config/alias-config.xml"/> <!-- 풀네임 줄여주는 설정 -->
+	</bean>
+	
+	<mybatis-spring:scan base-package="kr.co.goodee"/>
+	
+</beans>

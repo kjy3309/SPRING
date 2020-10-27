@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+   "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatgis.org./dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.spring.dao.BoardDAO">
+	
+	<select id = "list" resultType="com.spring.dto.BoardDTO">
+		SELECT * FROM bbs ORDER BY idx DESC
+	</select>
+	
+	<insert id = "write" parameterType = "hashmap">
+		INSERT INTO bbs(idx,user_name,subject,content,bHit) 
+			VALUES(bbs_seq.NEXTVAL, #{user_name}, #{subject}, #{content}, 0)
+	</insert>
+	
+	<select id = "detail" resultType="com.spring.dto.BoardDTO">
+		SELECT * FROM bbs WHERE idx = #{param1}
+	</select>
+	
+	<update id = "upHit">
+		UPDATE bbs SET bHit = bHit+1 WHERE idx = #{param1}
+	</update>
+	
+	<delete id = "del">
+		DELETE FROM bbs WHERE idx = #{param1}
+	</delete>
+	
+	<update id = "update" parameterType = "hashmap">
+		UPDATE bbs SET subject=#{subject}, content=#{content} WHERE idx=#{idx}
+	</update>
+	
+</mapper>

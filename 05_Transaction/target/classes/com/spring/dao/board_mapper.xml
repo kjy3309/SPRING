@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.dao.BoardDAO">
+	
+	<select id="list" resultType="board">
+		SELECT * FROM bbs ORDER BY idx DESC
+	</select>
+	
+	<select id="detail" parameterType="String" resultType="board">
+		SELECT * FROM bbs WHERE idx=#{idx}
+	</select>
+	
+	<!-- 일부로 상세보기 틀리기 -->
+	<!-- <select id="detail" parameterType="String" resultType="com.spring.dto.BoardDTO">
+		SELECT * FROM bbs WHERE idz=#{idx}
+	</select> -->
+	
+	<!-- parameterType 을 지정하면 파라메터 이름으로 사용 할 수 있다. -->
+	<!-- 다만 복수개의 파라메터가 각각 다른 형태로 들어올 경우 문제가 생길 수 있다.  -->
+	<update id="bHit">
+		UPDATE bbs SET bHit = bHit+1 WHERE idx=#{param1}
+	</update>
+	
+	<select id="login" resultType="int">
+		SELECT COUNT(id) FROM member WHERE id=#{param1} AND pw=#{param2}
+	</select>
+	
+	<insert id="write" parameterType="board">
+		INSERT INTO bbs(idx, user_name, subject, content, bHit)  VALUES(bbs_seq.NEXTVAL, #{user_name}, #{subject}, #{content}, 0)
+	</insert>
+	
+	<update id="update">
+		UPDATE bbs SET subject=#{param1}, content=#{param2} WHERE idx=#{param3}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM bbs WHERE idx=#{param1}
+	</delete>
+	
+</mapper>

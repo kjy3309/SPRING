@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;scheduler.xml&apos; to &apos;homeWork/src/main/resources/config&apos;&#x0D;&#x0A;- Original project: &apos;14_Scheduler&apos;&#x0D;&#x0A;- Destination element: &apos;homeWork/src/main/resources/config&apos;&#x0D;&#x0A;- Original element: &apos;scheduler.xml&apos;" description="Copy file" destination="=homeWork/src\/main\/resources&lt;config" element1="src/main/resources/config/scheduler.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1603692506750" units="0" version="1.0"/>
+</session>

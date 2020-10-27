@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+	<!-- xml 과 beans XML 의 차이는 위의 beans 라는 태그가 있는지 확인해보면 된다. -->
+	
+	<!-- datasource 작성 -->
+	<bean name="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+		<property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="C##WEB_USER"/>
+		<property name="password" value="pass"/>
+	</bean>
+	
+	<!-- dataSource 를 이용해서 DB 접속 및 사용 설정 -->
+	<!-- name = 정해져있음  id = 내맘대로-->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="datasource"/>
+		<property name="mapperLocations" value="classpath:com/spring/dao/*.xml"/>
+		<property name="environment" value="classpath:/config/pool-config.xml"/>
+	</bean>
+	
+	<!-- MyBatis 를 별다른 코드없이 사용할 수 있도록 해주는 설정 -->
+	<mybatis-spring:scan base-package="com.spring.dao"/>
+
+</beans>

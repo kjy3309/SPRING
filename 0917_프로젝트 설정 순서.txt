@@ -1,0 +1,13 @@
+(X)pom.xml 설정 변경, 필요한 라이브러리 추가
+
+(X)web.xml 한글깨짐방지, servlet-context, root-context 위치....
+
+root-context.xml 설정 추가 등등... db, mybatis, properties, transaction, file upload
+
+servlet-context.xml 에서 확인 할 내용
+ -> component scan basic package
+ -> resources 요청에 대한 폴더 위치 확인
+
+log4j.xml 설정
+
+package 생성 (dao 가 없으면 에러가 나므로..)

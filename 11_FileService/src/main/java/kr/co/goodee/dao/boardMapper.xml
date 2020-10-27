@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.goodee.dao.BoardDAO">
+
+	<select id="list" resultType="board">
+		SELECT * FROM bbs ORDER BY idx DESC
+	</select>
+	
+	<!-- 등록한 글의 idx 를 가져오자. 
+	parameterType: 사용할 빈의 위치 
+	userGenerateKeys : 방금 생성한 PK 가져올지 여부
+	keyProperty : PK 가 되는 빈의 변수 명
+	KeyColumn : PK 컬럼	
+	-->
+	
+	<insert 
+		id="write" 
+		parameterType="board"
+		useGeneratedKeys="true"
+		keyProperty="idx"
+		keyColumn="idx">
+		INSERT INTO bbs(idx, user_name, subject, content, bHit)
+			VALUES(bbs_seq.NEXTVAL, #{user_name}, #{subject}, #{content}, 0)
+	</insert>
+	
+	<insert id="writeFile">
+		INSERT INTO photo(fileIdx, idx, oriFileName, newFileName)
+			VALUES(photo_seq.NEXTVAL, #{param1}, #{param2}, #{param3})
+	</insert>
+	
+	<select id="detail" resultType="board">
+		/* 상세 보기 정보 가져오기 */
+		SELECT * FROM bbs WHERE idx = #{param1}
+	</select>
+	
+	<select id="fileList" resultType="files">
+		SELECT * FROM photo WHERE idx = #{param1}
+	</select>
+	
+</mapper>

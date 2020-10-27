@@ -1,0 +1,33 @@
+1. MyBatis 란?
+자바에서 RDB 프로그래밍을 쉽게 도와주는 프레임워크
+- SQL 문을 XML 따로 보관(mapper xml)
+- 한두줄의 자바코드로 JDBC 프로그래밍이 가능
+
+2. 필요 라이브러리(OJDBC 와 DBCP 는 필수)
+spring-jdbc
+mybatis
+mybatis-jdbc
+
+3. 마이바티스 설정
+** spring 에 추가하는 설정이 있는 xml 은 beans xml
+- dataSource <- 접속 정보
+- sqlSessionFactory <- mybatis 사용 설정
+  - mapperLocations <- mapper xml 어디 있나?
+  - environment <- mybatis 사용 환경 설정(커넥션 풀 설정)
+- mybatis-spring:scan <- 마이바티스 사용을 쉽게 해주는 기능 사용 범위
+  
+4. 작동 순서
+- service 에서 DAO interface 호출
+- interface 에 연결된 mapper XML 을 호출
+- XML 내의 id 와 interface 메서드 이름을 매칭
+- parameterType 확인
+- resultType 확인
+- 쿼리 실행 결과값을 반환
+
+
+
+
+
+
+
+

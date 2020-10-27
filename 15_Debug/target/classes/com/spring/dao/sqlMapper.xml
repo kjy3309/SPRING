@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="com.spring.dao.CrudInter"> -->
+<mapper namespace="com.spring.dao.CrudInter">
+	<!-- <select id="list" resultType="com.spring.beans.BoardDTO"> -->
+	<select id="list" resultType="com.spring.beans.BoardDTO">
+		SELECT * FROM bbs ORDER BY idx DESC
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM bbs WHERE idx = #{param1}
+	</delete>
+	
+	<insert id="write">
+	 	INSERT INTO bbs(idx, user_name, subject, content, bHit
+	 		)VALUES(
+ 		bbs_seq.NEXTVAL, #{param1}, #{param2}, #{param3}, 0)
+	</insert>
+	
+ 	<update id="upHit">
+ 		UPDATE bbs SET bHit = bHit+1 WHERE idx = #{param1}
+ 	</update>
+ 	
+ 	<!-- <select id="detail" resultType="com.spring.beans.BoardDTO"> -->
+ 	<select id="detail" resultType="com.spring.beans.BoardDTO">
+ 		SELECT * FROM bbs WHERE idx = #{param1}
+ 	</select>
+ 	
+ 	<delete id="del">
+ 		DELETE FROM bbs WHERE idx = #{param1}
+ 	</delete>
+	
+		
+</mapper>

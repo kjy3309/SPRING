@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="05_Transaction"/>
+<aop-project name="09_RestfulRequest"/>
+<aop-project name="10_RealTime"/>
+<aop-project name="pubBicycle"/>
+<aop-project name="13_AOP"/>
+<aop-project name="FileServiceClone"/>
+<aop-project name="16_Passincode"/>
+<aop-project name="04_Dynamic"/>
+<aop-project name="02_DataBase"/>
+<aop-project name="12_InterCepter"/>
+<aop-project name="01_Start"/>
+<aop-project name="07_AjaxSample"/>
+<aop-project name="15_Debug"/>
+<aop-project name="03_MyBatis"/>
+<aop-project name="08_RestRequest"/>
+<aop-project name="11_FileService">
+<aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="51" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#11_FileService#src/main/webapp/WEB-INF/spring/root-context.xml#51" aspect-start-line-number="51" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/11_FileService/src/main/webapp/WEB-INF/spring/root-context.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:11_FileService|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:8|8:boardService:8" bean-file="/11_FileService/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/11_FileService/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=05_Transaction/C:\/SPRING\/repository\/org\/springframework\/spring-tx\/4.3.14.RELEASE\/spring-tx-4.3.14.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=11_FileService/src\/main\/java&lt;kr.co.goodee.service{BoardService.java[BoardService~write~QHashMap\&lt;QString;QString;&gt;;~QHttpSession;" target-start-line="112"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="Bicycle"/>
+<aop-project name="homeWork"/>
+<aop-project name="06_Property"/>
+<aop-project name="14_Scheduler"/>
+<aop-project name="00_Pratice"/>
+</aop-reference-model>
